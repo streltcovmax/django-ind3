@@ -1,0 +1,14 @@
+{% extends 'header.html' %}
+{% block in_title %} {{title}} {% endblock %}
+{% block in_body %}
+
+<h1>{{ title }}</h1>
+
+<ul>
+{% for verbose_name, value in fields %}
+  {% if not forloop.first %}
+    <li><strong>{{ verbose_name }}:</strong> {{ value }}</li>
+  {% endif %}
+{% endfor %}
+</ul>
+{% endblock %}

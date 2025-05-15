@@ -1,0 +1,13 @@
+thead, th, td{
+  border: 1px #444 solid;
+  padding: 6px 8px;
+}
+.cap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cap span{
+  font-size: 22px;
+  font-weight: bold;
+}

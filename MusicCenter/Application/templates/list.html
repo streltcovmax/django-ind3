@@ -1,0 +1,36 @@
+{% extends 'header.html' %}
+{% block in_title %} {{title}} {% endblock %}
+{% block in_body %}
+<table>
+  <caption>
+    <div class="cap">
+      <span> {{ title }} </span>
+      <a href="/{{ model_name }}/create/"> Добавить </a>
+    </div>
+  </caption>
+  <thead>
+    <tr>
+      {% for field in fields %}
+        <th>{{ field }}</th>
+      {% endfor %}
+      <th>Действия</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for obj in objects %}
+      <tr>
+        {% for value in obj %}
+          {% if not forloop.first %}
+            <td>{{ value }}</td>
+          {% endif %}
+        {% endfor %}
+        <td>
+          <a href="/{{ model_name }}/{{ obj.0 }}/detail/">Детали</a>
+          |
+          <a href="/{{ model_name }}/{{ obj.0 }}/edit/">Редактировать</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
