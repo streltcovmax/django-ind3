@@ -42,6 +42,8 @@ class Instrument(models.Model):
 class Instructor(models.Model):
     name = models.CharField(max_length=70, verbose_name="Имя инструктора")
     phone = models.CharField(max_length=15, verbose_name="Телефон", validators=[phone_validator])
+    # age = models.IntegerField(verbose_name="Возраст инстурктора")
+    # field = models.CharField(verbose_name="SDasdasd")
     specialization = models.CharField(max_length=150, verbose_name="Специализация")
 
     required_fields = ['name']

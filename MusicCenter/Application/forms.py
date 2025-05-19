@@ -25,3 +25,9 @@ class LessonForm(forms.ModelForm):
     class Meta:
         model = Lesson
         fields = ['artist', 'instrument', 'instructor', 'lesson_date']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if self.instance and self.instance.pk and self.instance.lesson_date:
+            self.initial['lesson_date'] = self.instance.lesson_date.strftime('%Y-%m-%dT%H:%M')

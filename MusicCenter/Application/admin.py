@@ -22,4 +22,3 @@ class InstructorAdmin(admin.ModelAdmin):
 class LessonAdmin(admin.ModelAdmin):
     list_display = ['artist', 'instructor', 'instrument', 'lesson_date']
     list_filter = ['lesson_date', 'instructor']
-    # search_fields = ['notes']
