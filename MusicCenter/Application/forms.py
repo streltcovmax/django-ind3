@@ -4,7 +4,7 @@ from .models import *
 class ArtistForm(forms.ModelForm):
     class Meta:
         model = Artist
-        fields = ['name', 'phone']
+        fields = ['name', 'phone', 'age']
 
 class InstrumentForm(forms.ModelForm):
     class Meta:
